@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:myapp/app/core/constant.dart';
 import 'package:myapp/app/data/requests/signup_model.dart';
 
@@ -11,6 +12,7 @@ class SignupController extends GetxController {
   Rx<TextEditingController> address = TextEditingController().obs;
   Rx<TextEditingController> password = TextEditingController().obs;
   Rx<TextEditingController> passwordConf = TextEditingController().obs;
+  final session = Hive.box('session');
 
   Future<void> signup() async {
     SignupModel signup = SignupModel.fromJson({
@@ -37,9 +39,12 @@ class SignupController extends GetxController {
       Get.snackbar("gagal", "email sudah digunakan");
       return;
     }
-    print("hallo");
 
     await MyCollection.users.doc().set(signup.toJson());
+    session.put('name', signup.name);
+    session.put('email', signup.email);
+    session.put('address', signup.address);
+    session.put('phone', signup.phone);
     Get.snackbar('Sukses', "Akun telah berhasil ditambah");
     Get.offAllNamed("/home");
   }

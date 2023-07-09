@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myapp/app/modules/home/controllers/home_controller.dart';
 import '../../../core/themes.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends GetView<HomeController> {
   const ProfileView({super.key});
 
   @override
@@ -33,76 +35,77 @@ class ProfileView extends StatelessWidget {
                 width: 120,
                 height: 120,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: Colors.grey,
-                    image: const DecorationImage(
-                      image: AssetImage(
-                          "assets/page-1/images/removebg-preview-1-raD.png"),
-                    )),
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.grey,
+                  image: const DecorationImage(
+                    image: AssetImage(
+                        "assets/page-1/images/removebg-preview-1-raD.png"),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 40,
               ),
-              const Column(
+              Column(
                 children: [
                   Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Nama Lengkap",
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
                           TextField(
-                            controller: null,
-                            decoration: InputDecoration(
+                            controller: controller.name.value,
+                            decoration: const InputDecoration(
                               border: UnderlineInputBorder(),
                             ),
                           ),
                         ],
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Email",
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
                           TextField(
-                            controller: null,
-                            decoration: InputDecoration(
+                            controller: controller.email.value,
+                            decoration: const InputDecoration(
                               border: UnderlineInputBorder(),
                             ),
                           ),
                         ],
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "No Telepon",
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
                           TextField(
-                            controller: null,
-                            decoration: InputDecoration(
+                            controller: controller.phone.value,
+                            decoration: const InputDecoration(
                               border: UnderlineInputBorder(),
                             ),
                           ),
@@ -127,11 +130,9 @@ class ProfileView extends StatelessWidget {
                   child: Text(
                     "Simpan",
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: ThemeApp.white
-
-                    ),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: ThemeApp.white),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -149,9 +150,9 @@ class ProfileView extends StatelessWidget {
                   border: Border.all(color: ThemeApp.dark),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const InkWell(
-                  onTap: null,
-                  child: Text(
+                child: InkWell(
+                  onTap: () => controller.logout(),
+                  child: const Text(
                     "Keluar",
                     style: TextStyle(
                       fontSize: 20,
