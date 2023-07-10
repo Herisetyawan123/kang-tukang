@@ -17,6 +17,10 @@ class HomeController extends GetxController {
     Get.offAllNamed('/signin');
   }
 
+  void goNotification() {
+    Get.toNamed('/notification');
+  }
+
   @override
   void onInit() {
     user.value = User(

@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp/app/core/themes.dart';
+import '../controllers/home_controller.dart';
 
-class FrontView extends StatelessWidget {
+class FrontView extends GetView<HomeController> {
   const FrontView({super.key});
 
   @override
@@ -18,7 +20,9 @@ class FrontView extends StatelessWidget {
           actions: [
             // TODO implementation route to notification page
             IconButton(
-                onPressed: () => Navigator.pushNamed(context, ''),
+                onPressed: () {
+                  controller.goNotification();
+                },
                 icon: const Icon(Icons.notifications_none))
           ],
         ),
