@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/modules/home/controllers/home_controller.dart';
 import '../../../core/themes.dart';
+import '../../../../utils.dart';
 
 class ProfileView extends GetView<HomeController> {
   const ProfileView({super.key});
@@ -14,9 +15,9 @@ class ProfileView extends GetView<HomeController> {
         toolbarHeight: 70,
         backgroundColor: ThemeApp.white,
         foregroundColor: ThemeApp.dark,
-        title: const Text(
+        title: Text(
           "Profile",
-          style: TextStyle(
+          style: SafeGoogleFont("Inter",
             fontSize: 26,
             fontWeight: FontWeight.bold,
           ),
@@ -53,10 +54,10 @@ class ProfileView extends GetView<HomeController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Nama Lengkap",
                             textAlign: TextAlign.left,
-                            style: TextStyle(
+                            style: SafeGoogleFont("Inter",
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
                           TextField(
@@ -75,10 +76,10 @@ class ProfileView extends GetView<HomeController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Email",
                             textAlign: TextAlign.left,
-                            style: TextStyle(
+                            style: SafeGoogleFont("Inter",
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
                           TextField(
@@ -97,10 +98,10 @@ class ProfileView extends GetView<HomeController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "No Telepon",
                             textAlign: TextAlign.left,
-                            style: TextStyle(
+                            style: SafeGoogleFont("Inter",
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
                           TextField(
@@ -125,11 +126,11 @@ class ProfileView extends GetView<HomeController> {
                   color: ThemeApp.primary,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const InkWell(
+                child: InkWell(
                   onTap: null,
                   child: Text(
                     "Simpan",
-                    style: TextStyle(
+                    style: SafeGoogleFont("Inter",
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: ThemeApp.white),
@@ -152,9 +153,9 @@ class ProfileView extends GetView<HomeController> {
                 ),
                 child: InkWell(
                   onTap: () => controller.logout(),
-                  child: const Text(
+                  child: Text(
                     "Keluar",
-                    style: TextStyle(
+                    style: SafeGoogleFont("Inter",
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),

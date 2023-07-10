@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/core/themes.dart';
 import '../controllers/home_controller.dart';
+import '../../../../utils.dart';
 
 class FrontView extends GetView<HomeController> {
   const FrontView({super.key});
@@ -67,7 +68,7 @@ class FrontView extends GetView<HomeController> {
                   controller: null,
                   decoration: InputDecoration(
                     labelText: 'Mencari Tukang',
-                    labelStyle: const TextStyle(color: ThemeApp.dark),
+                    labelStyle: SafeGoogleFont("Inter", color: ThemeApp.dark),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.0)),
                     focusedBorder: OutlineInputBorder(
@@ -137,7 +138,7 @@ class FrontView extends GetView<HomeController> {
                     autoPlayAnimationDuration:
                         const Duration(milliseconds: 1500),
                   )),
-              const Padding(
+              Padding(
                 padding:
                     EdgeInsets.only(bottom: 5, left: 15, right: 15, top: 15),
                 child: Row(
@@ -146,7 +147,8 @@ class FrontView extends GetView<HomeController> {
                   children: [
                     Text(
                       "Kategori Layanan",
-                      style: TextStyle(
+                      style: SafeGoogleFont(
+                        "Inter",
                         fontSize: 23,
                         fontWeight: FontWeight.bold,
                       ),
@@ -167,18 +169,18 @@ class FrontView extends GetView<HomeController> {
                   scrollDirection: Axis.horizontal,
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BoxDashboard(
+                  children: const [
+                    BoxDashboard(
                       assets: "assets/page-1/images/image-1-1RK.png",
                       title: "Pembangunan &\nPerbaikan",
                       handleTap: null,
                     ),
-                    const BoxDashboard(
+                    BoxDashboard(
                       assets: "assets/page-1/images/image-2-EDo.png",
                       title: "Inspirasi\nDesain",
                       handleTap: null,
                     ),
-                    const BoxDashboard(
+                    BoxDashboard(
                       assets: "assets/page-1/images/price-1.png",
                       title: "Daftar\nHarga",
                       handleTap: null,
@@ -186,7 +188,7 @@ class FrontView extends GetView<HomeController> {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding:
                     EdgeInsets.only(bottom: 5, left: 15, right: 15, top: 15),
                 child: Row(
@@ -195,7 +197,8 @@ class FrontView extends GetView<HomeController> {
                   children: [
                     Text(
                       "Artikel Seputar Bangunan",
-                      style: TextStyle(
+                      style: SafeGoogleFont(
+                        "Inter",
                         fontSize: 23,
                         fontWeight: FontWeight.bold,
                       ),
@@ -277,7 +280,10 @@ class BoxDashboard extends StatelessWidget {
             ),
             Text(
               title,
-              style: const TextStyle(fontSize: 16, color: ThemeApp.dark),
+              style: SafeGoogleFont(
+                "Inter",
+                fontSize: 15,
+                color: ThemeApp.dark),
               textAlign: TextAlign.center,
             )
           ],

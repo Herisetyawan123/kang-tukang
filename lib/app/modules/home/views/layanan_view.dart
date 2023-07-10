@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/themes.dart';
+import '../../../../utils.dart';
 
 class LayananView extends StatelessWidget {
   const LayananView({super.key});
@@ -13,9 +13,10 @@ class LayananView extends StatelessWidget {
           toolbarHeight: 70,
           backgroundColor: ThemeApp.white,
           foregroundColor: ThemeApp.dark,
-          title: const Text(
+          title: Text(
             "Layanan",
-            style: TextStyle(
+            style: SafeGoogleFont(
+              "Inter",
               fontSize: 26,
               fontWeight: FontWeight.bold,
             ),
@@ -30,13 +31,10 @@ class LayananView extends StatelessWidget {
           ),
           child: Column(children: [
             ExpansionTile(
-              leading: const Icon(
-                color: ThemeApp.dark,
-                Icons.call
-              ),
-              title: const Text(
+              leading: const Icon(color: ThemeApp.dark, Icons.call),
+              title: Text(
                 "Telepon",
-                style: TextStyle(
+                style: SafeGoogleFont("Inter",
                     fontSize: 19,
                     fontWeight: FontWeight.w600,
                     color: ThemeApp.dark),
@@ -46,18 +44,18 @@ class LayananView extends StatelessWidget {
                   color: Colors.black12,
                   padding: const EdgeInsets.all(20),
                   width: double.infinity,
-                  child: const Text("0821-2345-6786"),
+                  child: Text(
+                    "0821-2345-6786",
+                    style: SafeGoogleFont("Inter", fontSize: 18),
+                  ),
                 )
               ],
             ),
             ExpansionTile(
-              leading: const Icon(
-                color: ThemeApp.dark,
-                Icons.chat
-              ),
-              title: const Text(
+              leading: const Icon(color: ThemeApp.dark, Icons.chat),
+              title: Text(
                 "WhatsApp",
-                style: TextStyle(
+                style: SafeGoogleFont("Inter",
                     fontSize: 19,
                     fontWeight: FontWeight.w600,
                     color: ThemeApp.dark),
@@ -67,7 +65,8 @@ class LayananView extends StatelessWidget {
                   color: Colors.black12,
                   padding: const EdgeInsets.all(20),
                   width: double.infinity,
-                  child: const Text("+62 854-7689-1098"),
+                  child:
+                      Text("+62 854-7689-1098", style: SafeGoogleFont("Inter", fontSize: 18)),
                 )
               ],
             ),
