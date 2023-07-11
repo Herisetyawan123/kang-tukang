@@ -169,21 +169,27 @@ class FrontView extends GetView<HomeController> {
                   scrollDirection: Axis.horizontal,
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     BoxDashboard(
                       assets: "assets/page-1/images/image-1-1RK.png",
                       title: "Pembangunan &\nPerbaikan",
-                      handleTap: null,
+                      handleTap: () {
+                        controller.goPembangunan();
+                      },
                     ),
                     BoxDashboard(
                       assets: "assets/page-1/images/image-2-EDo.png",
                       title: "Inspirasi\nDesain",
-                      handleTap: null,
+                      handleTap: () {
+                        controller.goDesain();
+                      },
                     ),
                     BoxDashboard(
                       assets: "assets/page-1/images/price-1.png",
                       title: "Daftar\nHarga",
-                      handleTap: null,
+                      handleTap: () {
+                        controller.goHarga();
+                      },
                     ),
                   ],
                 ),
@@ -219,8 +225,7 @@ class FrontView extends GetView<HomeController> {
                       height: 150,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage(
-                              "assets/page-1/images/article.png"),
+                          image: AssetImage("assets/page-1/images/article.png"),
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -280,10 +285,8 @@ class BoxDashboard extends StatelessWidget {
             ),
             Text(
               title,
-              style: SafeGoogleFont(
-                "Inter",
-                fontSize: 15,
-                color: ThemeApp.dark),
+              style:
+                  SafeGoogleFont("Inter", fontSize: 15, color: ThemeApp.dark),
               textAlign: TextAlign.center,
             )
           ],

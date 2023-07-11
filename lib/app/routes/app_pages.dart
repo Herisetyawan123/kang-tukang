@@ -6,6 +6,10 @@ import '../modules/notification/bindings/notification_binding.dart';
 import '../modules/notification/views/notification_view.dart';
 import '../modules/pesanan/bindings/pesanan_binding.dart';
 import '../modules/pesanan/views/pesanan_view.dart';
+import '../modules/service/bindings/service_binding.dart';
+import '../modules/service/views/service_pembangunan_view.dart';
+import '../modules/service/views/service_desain_view.dart';
+import '../modules/service/views/service_harga_view.dart';
 import '../modules/signin/bindings/signin_binding.dart';
 import '../modules/signin/views/signin_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -51,6 +55,21 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => const NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.PEMBANGUNAN,
+      page: () => const ServicePembangunan(),
+      binding: ServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.DESAIN,
+      page: () => const ServiceDesain(),
+      binding: ServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.HARGA,
+      page: () => const ServiceHarga(),
+      binding: ServiceBinding(),
     ),
   ];
 }

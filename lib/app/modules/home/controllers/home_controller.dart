@@ -21,6 +21,19 @@ class HomeController extends GetxController {
     Get.toNamed('/notification');
   }
 
+  void goPembangunan() {
+    Get.toNamed('/pembangunan');
+  }
+
+  void goDesain() {
+    Get.toNamed('/desain');
+  }
+
+  void goHarga() {
+    Get.toNamed('/harga');
+  }
+
+
   @override
   void onInit() {
     user.value = User(

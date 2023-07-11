@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:myapp/app/core/themes.dart';
+import 'package:myapp/utils.dart';
 
 import '../controllers/notification_controller.dart';
 import '../components/card_notification.dart';
@@ -12,9 +13,9 @@ class NotificationView extends GetView<NotificationController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Notifikasi',
-          style: TextStyle(
+          style: SafeGoogleFont("Inter",
             color: ThemeApp.dark,
             fontSize: 22,
             fontWeight: FontWeight.bold
@@ -46,7 +47,6 @@ class NotificationView extends GetView<NotificationController> {
                 description: "Pembatalan telah di konfirmasi",
                 date: "31 Mei 2023, 11:00"
                 ),
-
             ],
           )
         ],
