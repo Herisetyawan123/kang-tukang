@@ -37,15 +37,17 @@ class CardHarga extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            name,
-            textAlign: TextAlign.start,
-            style: SafeGoogleFont(
-              'Inter',
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              height: 1.2125,
-              color: const Color(0xff000000),
+          Flexible(
+            child: Text(
+              name,
+              textAlign: TextAlign.start,
+              style: SafeGoogleFont(
+                'Inter',
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                height: 1.2125,
+                color: const Color(0xff000000),
+              ),
             ),
           ),
           const SizedBox(
