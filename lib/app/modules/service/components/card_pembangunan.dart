@@ -17,8 +17,7 @@ class CardPembangunan extends StatelessWidget {
       child: Container(
         height: 180,
         width: 170,
-        margin: const EdgeInsets.all(0),
-        padding: const EdgeInsets.all(0),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: ThemeApp.primary,
           borderRadius: BorderRadius.circular(5),
@@ -31,7 +30,7 @@ class CardPembangunan extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: 30,
+              height:45,
               width: 170,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -39,15 +38,18 @@ class CardPembangunan extends StatelessWidget {
                     end: Alignment.topCenter,
                     colors: [Colors.black, Colors.transparent]),
               ),
-              child: Text(
-                title,
-                style: SafeGoogleFont(
-                  "Inter",
-                  fontSize: 18,
-                  color: ThemeApp.white,
-                  fontWeight: FontWeight.bold,
+              alignment: Alignment.center,
+              child: Flexible(
+                child: Text(
+                  title,
+                  style: SafeGoogleFont(
+                    "Inter",
+                    fontSize: 18,
+                    color: ThemeApp.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ],

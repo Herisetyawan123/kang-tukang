@@ -62,7 +62,7 @@ class ServiceDesain extends GetView<ServiceController> {
                 mainAxisExtent: 220
               ), 
               itemCount: data.length,
-              itemBuilder: (BuildContext, index) {
+              itemBuilder: (BuildContext buildContext, index) {
                 // print(data[index]["name"]);
                 return CardDesain(title: data[index]["nama"] as String, 
                 assets: data[index]["asset"] as String

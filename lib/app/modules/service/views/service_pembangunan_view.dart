@@ -6,7 +6,31 @@ import '../../../core/themes.dart';
 import '../controllers/service_controller.dart';
 
 class ServicePembangunan extends GetView<ServiceController> {
-  const ServicePembangunan({Key? key}) : super(key: key);
+  ServicePembangunan({Key? key}) : super(key: key);
+  final List <Map<String, String>> data = [
+    {
+      "title" : "Rumah",
+      "assets" : "assets/page-1/images/image-13-bg.png"
+    },
+    {
+      "title" : "Kanopi",
+      "assets" : "assets/page-1/images/image-44.png"
+    },
+    {
+      "title" : "Pagar",
+      "assets" : "assets/page-1/images/image-15-bg.png"
+    },
+    {
+      "title" : "Taman",
+      "assets" : "assets/page-1/images/image-14.png"
+    },
+    {
+      "title" : "Ledeng\ndan Sumur",
+      "assets" : "assets/page-1/images/image-18-bg.png"
+    },
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +58,11 @@ class ServicePembangunan extends GetView<ServiceController> {
               crossAxisSpacing: 10,
               mainAxisSpacing: 20,
               mainAxisExtent: 180),
-          itemCount: 4,
-          itemBuilder: (BuildContext context, index) {
-            return const CardPembangunan(
-              title: "Rumah",
-              assets: "assets/page-1/images/image-13-bg.png",
+          itemCount: data.length,
+          itemBuilder: (BuildContext buildContext, index) {
+            return CardPembangunan(
+              title: data[index]["title"] as String,
+              assets: data[index]["assets"] as String,
               handleTap: null,
             );
           },

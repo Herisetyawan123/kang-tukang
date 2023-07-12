@@ -58,7 +58,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PEMBANGUNAN,
-      page: () => const ServicePembangunan(),
+      page: () => ServicePembangunan(),
       binding: ServiceBinding(),
     ),
     GetPage(
