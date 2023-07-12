@@ -40,10 +40,9 @@ class CardHarga extends StatelessWidget {
           Flexible(
             child: Text(
               name,
-              textAlign: TextAlign.start,
               style: SafeGoogleFont(
                 'Inter',
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.w700,
                 height: 1.2125,
                 color: const Color(0xff000000),
@@ -55,10 +54,9 @@ class CardHarga extends StatelessWidget {
           ),
           Text(
             price,
-            textAlign: TextAlign.start,
             style: SafeGoogleFont(
               'Inter',
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.bold,
               height: 1.2125,
               color: const Color(0xff000000),
